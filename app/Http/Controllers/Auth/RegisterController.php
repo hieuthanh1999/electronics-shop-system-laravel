@@ -72,7 +72,6 @@ class RegisterController extends Controller
                 'district_id' => old('district') ?? $districts['data'][0]['DistrictID'],
             ]);
             $wards = json_decode($response->body(), true);
-            
             // kiểm tra xem người dùng đã nhập đầy thông tin hay chưa
             $rules = [
                 'email' => [
@@ -121,7 +120,7 @@ class RegisterController extends Controller
                     'maxlength' => 11,
                 ],
             ];
-    
+
             // Hiển thị thông báo lỗi khi người dùng chưa nhập đủ thông tin
             $messages = [
                 'name' => [
@@ -170,7 +169,7 @@ class RegisterController extends Controller
                     'required' =>  __('message.required', ['attribute' => 'số nhà']),
                 ],
             ];
-    
+
             return view('auth.register', [
                 'citys' => $citys['data'],
                 'districts' => $districts['data'],
@@ -181,7 +180,7 @@ class RegisterController extends Controller
         } catch (Exception) {
             return redirect()->route('user.login');
         }
-        
+
     }
 
     // hàm store dùng để xử lý logic và lưu vào csdl
@@ -198,7 +197,7 @@ class RegisterController extends Controller
                 'phone_number' => $data['phone_number'],
                 'role_id' => Role::ROLE['user'],
             ];
-            
+
             // lấy thông tin địa chỉ từ phía khách hàng để thêm vào vào csdl
             $addressData = [
                 'city' => $data['city'],
@@ -206,13 +205,13 @@ class RegisterController extends Controller
                 'ward' => $data['ward'],
                 'apartment_number' => $data['apartment_number'],
             ];
-            
+
             // tạo ra token để gửi mail xác thực tài khoản
             $token = Str::random(64);
             // tạo thời gian cho token
             $time = Config::get('auth.verification.expire.resend', 60);
 
-            
+
             DB::beginTransaction();
             // thêm tài khoản vào database
             $user = $this->userRepository->create($userData);

@@ -78,9 +78,39 @@
           <div class="col-md-12">
              <!-- STACKED BAR CHART -->
              <div class="card card-success">
-              <div class="card-header" style="background: #4f5962">
-                <h3 class="card-title">Doanh Thu Tháng {{ $month }} Năm {{ $year }}</h3>
+              <div class="card-header" style="background: #4f5962; display: flex;">
+                <div style="flex: 1; display: flex; flex-direction: column">
+                    <h3 style="padding: 15px 0;" class="card-title">Doanh Thu Tháng {{ $month }} Năm {{ $year }}</h3>
+                    <form id="filter-form" method="GET" action="{{ route('admin.home') }}" class="form-inline">
+                        <div class="form-group mr-2">
+                          <h2 for="month" class="card-title">Tháng:</h2>
+                          <select name="month" id="month" class="form-control">
+                            @for ($m = 1; $m <= 12; $m++)
+                              <option value="{{ $m }}" {{ $m == request('month', $month) ? 'selected' : '' }}>
+                                {{ $m }}
+                              </option>
+                            @endfor
+                          </select>
+                        </div>
+                        <div class="form-group mr-2">
+                          <h2 for="year" class="card-title">Năm:</h2>
+                          <select name="year" id="year" class="form-control">
+                            @for ($y = date('Y') - 5; $y <= date('Y'); $y++)
+                              <option value="{{ $y }}" {{ $y == request('year', $year) ? 'selected' : '' }}>
+                                {{ $y }}
+                              </option>
+                            @endfor
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                      </form>
+
+
+                </div>
+
+
                 <div id="data-statistics" days="{{ $days }}" parameters="{{ $parameters }}"></div>
+
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>

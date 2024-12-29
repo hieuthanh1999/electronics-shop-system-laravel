@@ -5,7 +5,7 @@ namespace App\Repository\Eloquent;
 use App\Models\Order;
 use App\Repository\OrderRepositoryInterface;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 /**
  * Class OrderRepository
  * @package App\Repositories\Eloquent
@@ -23,7 +23,7 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     }
 
     /**
-     * Get all orders 
+     * Get all orders
      */
     public function getAllOrders()
     {
@@ -128,7 +128,7 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
     public function getProfit()
     {
         return DB::select('
-            select sum(order_details.quantity * order_details.unit_price) - sum(order_details.quantity * products.price_import) as profit from products 
+            select sum(order_details.quantity * order_details.unit_price) - sum(order_details.quantity * products.price_import) as profit from products
             join products_color on products.id = products_color.product_id
             join products_size on products_color.id = products_size.product_color_id
             join order_details on products_size.id = order_details.product_size_id
@@ -153,6 +153,31 @@ class OrderRepository extends BaseRepository implements OrderRepositoryInterface
         ');
         ;
     }
+
+            /**
+         * Sales statistics by day
+         *
+         * @param int|null $month Tháng (mặc định là tháng hiện tại nếu không truyền)
+         * @param int|null $year Năm (mặc định là năm hiện tại nếu không truyền)
+         * @return array Thống kê doanh thu theo ngày
+         */
+        public function salesStatisticsByDayParam($month = null, $year = null)
+        {
+            // Sử dụng tháng/năm hiện tại nếu không truyền tham số
+            $month = $month ?? Carbon::now()->month;
+            $year = $year ?? Carbon::now()->year;
+
+            return DB::select('
+                select day(created_at) as day, sum(total_money) as total from orders
+                where month(orders.created_at) = :month
+                and year(orders.created_at) = :year
+                and orders.order_status = 3
+                group by day(orders.created_at)
+            ', [
+                'month' => $month,
+                'year' => $year,
+            ]);
+        }
 
     /**
      * Get 10 new orders

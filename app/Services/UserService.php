@@ -21,7 +21,7 @@ use Illuminate\Support\Str;
 use \Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 
-class UserService 
+class UserService
 {
     /**
      * @var UserRepository
@@ -130,7 +130,7 @@ class UserService
                     'text' => $item['NameExtension'][1],
                 ];
             }
-    
+
             $response = Http::withHeaders([
                 'token' => '24d5b95c-7cde-11ed-be76-3233f989b8f3'
             ])->get('https://online-gateway.ghn.vn/shiip/public-api/master-data/district', [
@@ -143,7 +143,7 @@ class UserService
                     'text' => $item['DistrictName'],
                 ];
             }
-    
+
             $response = Http::withHeaders([
                 'token' => '24d5b95c-7cde-11ed-be76-3233f989b8f3'
             ])->get('https://online-gateway.ghn.vn/shiip/public-api/master-data/ward', [
@@ -204,7 +204,7 @@ class UserService
                     'type' => 'text',
                 ],
             ];
-    
+
             //Rules form
             $rules = [
                 'email' => [
@@ -243,7 +243,7 @@ class UserService
                     'maxlength' => 12,
                 ],
             ];
-    
+
             // Messages eror rules
             $messages = [
                 'name' => [
@@ -282,7 +282,7 @@ class UserService
                     'required' =>  __('message.required', ['attribute' => 'số nhà']),
                 ],
             ];
-    
+
             return [
                 'title' => TextLayoutTitle("create_user"),
                 'fields' => $fields,
@@ -292,10 +292,10 @@ class UserService
         } catch (Exception) {
             return [];
         }
-        
+
     }
 
-    /** 
+    /**
      * store the user in the database.
      * @param App\Http\Requests\Admin\StoreUserRequest $request
      * @return Illuminate\Http\RedirectResponse
@@ -313,7 +313,7 @@ class UserService
                 'role_id' => Role::ROLE['user'],
                 'created_by' => Auth::guard('admin')->user()->id,
             ];
-            
+
             // address data request
             $addressData = [
                 'city' => $data['city'],
@@ -321,7 +321,7 @@ class UserService
                 'ward' => $data['ward'],
                 'apartment_number' => $data['apartment_number'],
             ];
-            
+
             $token = Str::random(64);
             $time = Config::get('auth.verification.expire.resend', 60);
             DB::beginTransaction();
@@ -363,7 +363,7 @@ class UserService
                     'text' => $item['NameExtension'][1],
                 ];
             }
-    
+
             $response = Http::withHeaders([
                 'token' => '24d5b95c-7cde-11ed-be76-3233f989b8f3'
             ])->get('https://online-gateway.ghn.vn/shiip/public-api/master-data/district', [
@@ -376,7 +376,7 @@ class UserService
                     'text' => $item['DistrictName'],
                 ];
             }
-    
+
             $response = Http::withHeaders([
                 'token' => '24d5b95c-7cde-11ed-be76-3233f989b8f3'
             ])->get('https://online-gateway.ghn.vn/shiip/public-api/master-data/ward', [
@@ -444,7 +444,7 @@ class UserService
                     'value' => $user->address->apartment_number,
                 ],
             ];
-    
+
             //Rules form
             $rules = [
                 'email' => [
@@ -482,7 +482,7 @@ class UserService
                     'maxlength' => 12,
                 ],
             ];
-    
+
             // Messages eror rules
             $messages = [
                 'name' => [
@@ -520,7 +520,7 @@ class UserService
                     'required' =>  __('message.required', ['attribute' => 'số nhà']),
                 ],
             ];
-    
+
             return [
                 'title' => TextLayoutTitle("create_edit"),
                 'fields' => $fields,
@@ -531,7 +531,7 @@ class UserService
         } catch (Exception) {
             return[];
         }
-        
+
     }
 
     public function update(UpdateUserRequest $request, User $user)
@@ -583,7 +583,7 @@ class UserService
             } else {
                 $this->userRepository->update($user, $userData);
             }
-            
+
             DB::commit();
             return redirect()->route('admin.users_index')->with('success', TextSystemConst::UPDATE_SUCCESS);
         } catch (Exception $e) {
@@ -593,7 +593,7 @@ class UserService
         }
     }
 
-     /** 
+     /**
      * delete the user in the database.
      * @param Illuminate\Http\Request; $request
      * @return \Illuminate\Http\JsonResponse
@@ -608,7 +608,7 @@ class UserService
 
             if($this->userRepository->delete($user)) {
                 $this->userRepository->update(
-                    $user, 
+                    $user,
                     ['deleted_by' => Auth::guard('admin')->user()->id]
                 );
                 return response()->json(['status' => 'success', 'message' => TextSystemConst::DELETE_SUCCESS], 200);

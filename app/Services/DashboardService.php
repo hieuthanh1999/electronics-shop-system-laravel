@@ -5,8 +5,9 @@ namespace App\Services;
 use App\Repository\Eloquent\OrderRepository;
 use App\Repository\Eloquent\UserRepository;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
-class DashboardService 
+class DashboardService
 {
     /**
      * @var OrderRepository
@@ -34,7 +35,7 @@ class DashboardService
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //tổng doanh thu
         $revenue = $this->orderRepository->getRevenue();
@@ -48,12 +49,17 @@ class DashboardService
         $users = count($this->userRepository->all());
         //tổng nhân sự
         $admins = count($this->userRepository->admins());
+        $month = $request->has('month') ? $request->input('month') : Carbon::now()->month;
+        $year = $request->has('year') ? $request->input('year') : Carbon::now()->year;
         //thống kê theo ngày trong tháng
-        $salesStatisticsByDays = $this->orderRepository->salesStatisticsByDay();
+        $salesStatisticsByDays = $this->orderRepository->salesStatisticsByDayParam($month, $year);
         // mấy tháng hiện tại
-        $month = Carbon::now()->month;
-        //lấy năm hiện tại
-        $year = Carbon::now()->year;
+        // dd($request);
+        // $month = Carbon::now()->month;
+        // //lấy năm hiện tại
+        // $year = Carbon::now()->year;
+
+
 
         // lấy số ngày trong tháng hiện tại
         $daysInMonth = Carbon::createFromDate($year, $month, 1)->daysInMonth;
@@ -62,7 +68,7 @@ class DashboardService
         $parameters = [];
         //lấy danh thu bán được 1 ngày của tháng hiện tại
         for ($day = 1; $day <= $daysInMonth; $day++) {
-            $daysArray[] = $day;// daysArray[1] 
+            $daysArray[] = $day;// daysArray[1]
             $check = false;
             for ($i = 0; $i < count($salesStatisticsByDays); $i++) {
                 if ($salesStatisticsByDays[$i]->day == $day) {
