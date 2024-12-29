@@ -1,0 +1,10 @@
+- Quản lý giao dịch:
++ https://sandbox.vnpayment.vn/merchantv2/
++ n.hieuthanhps@gmail.com/Admin@123
+
+- Thẻ test thanh toán:
++ Ngân hàng	NCB
++ Số thẻ	9704198526191432198
++ Tên chủ thẻ	NGUYEN VAN A
++ Ngày phát hành	07/15
++ Mật khẩu OTP	123456

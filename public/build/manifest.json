@@ -1,0 +1,167 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.7394ab43.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/admin/js/dashboard.js": {
+    "file": "assets/dashboard.89c9c784.js",
+    "src": "resources/admin/js/dashboard.js",
+    "isEntry": true
+  },
+  "resources/admin/js/next-link.js": {
+    "file": "assets/next-link.64115996.js",
+    "src": "resources/admin/js/next-link.js",
+    "isEntry": true
+  },
+  "resources/admin/js/table-data.js": {
+    "file": "assets/table-data.83be78ae.js",
+    "src": "resources/admin/js/table-data.js",
+    "isEntry": true,
+    "imports": [
+      "_sweetalert2.esm.all.a0d56efc.js"
+    ]
+  },
+  "resources/common/js/login.js": {
+    "file": "assets/login.39637e50.js",
+    "src": "resources/common/js/login.js",
+    "isEntry": true
+  },
+  "resources/admin/js/user-create.js": {
+    "file": "assets/user-create.c8ffe6dd.js",
+    "src": "resources/admin/js/user-create.js",
+    "isEntry": true
+  },
+  "resources/common/js/form.js": {
+    "file": "assets/form.347b269e.js",
+    "src": "resources/common/js/form.js",
+    "isEntry": true
+  },
+  "resources/admin/js/toast-message.js": {
+    "file": "assets/toast-message.34039841.js",
+    "src": "resources/admin/js/toast-message.js",
+    "isEntry": true,
+    "imports": [
+      "_sweetalert2.esm.all.a0d56efc.js"
+    ]
+  },
+  "resources/admin/js/product.js": {
+    "file": "assets/product.7515ef0b.js",
+    "src": "resources/admin/js/product.js",
+    "isEntry": true
+  },
+  "resources/client/js/register.js": {
+    "file": "assets/register.70a43fd0.js",
+    "src": "resources/client/js/register.js",
+    "isEntry": true
+  },
+  "resources/client/js/product-detail.js": {
+    "file": "assets/product-detail.67eb55e8.js",
+    "src": "resources/client/js/product-detail.js",
+    "isEntry": true
+  },
+  "resources/client/js/checkout.js": {
+    "file": "assets/checkout.466a47ba.js",
+    "src": "resources/client/js/checkout.js",
+    "isEntry": true
+  },
+  "resources/client/js/show-product.js": {
+    "file": "assets/show-product.f897d27d.js",
+    "src": "resources/client/js/show-product.js",
+    "isEntry": true
+  },
+  "resources/admin/js/product-color.js": {
+    "file": "assets/product-color.15d99ac2.js",
+    "src": "resources/admin/js/product-color.js",
+    "isEntry": true,
+    "imports": [
+      "_sweetalert2.esm.all.a0d56efc.js"
+    ]
+  },
+  "resources/admin/js/size.js": {
+    "file": "assets/size.6e35fd03.js",
+    "src": "resources/admin/js/size.js",
+    "isEntry": true,
+    "imports": [
+      "_sweetalert2.esm.all.a0d56efc.js"
+    ]
+  },
+  "resources/admin/js/edit-product.js": {
+    "file": "assets/edit-product.9196f3f3.js",
+    "src": "resources/admin/js/edit-product.js",
+    "isEntry": true
+  },
+  "resources/admin/js/setting.js": {
+    "file": "assets/setting.69893b7d.js",
+    "src": "resources/admin/js/setting.js",
+    "isEntry": true
+  },
+  "resources/client/js/profile.js": {
+    "file": "assets/profile.7e449ffe.js",
+    "src": "resources/client/js/profile.js",
+    "isEntry": true
+  },
+  "_sweetalert2.esm.all.a0d56efc.js": {
+    "file": "assets/sweetalert2.esm.all.a0d56efc.js"
+  },
+  "resources/common/css/loading.css": {
+    "file": "assets/loading.e964a3b8.css",
+    "src": "resources/common/css/loading.css",
+    "isEntry": true
+  },
+  "resources/client/css/search.css": {
+    "file": "assets/search.5cc590b5.css",
+    "src": "resources/client/css/search.css",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.8b80c0f9.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/common/css/form.css": {
+    "file": "assets/form.71cf2f43.css",
+    "src": "resources/common/css/form.css",
+    "isEntry": true
+  },
+  "resources/client/css/auth.css": {
+    "file": "assets/auth.2c7ae315.css",
+    "src": "resources/client/css/auth.css",
+    "isEntry": true
+  },
+  "resources/client/css/checkout.css": {
+    "file": "assets/checkout.9fcacbf2.css",
+    "src": "resources/client/css/checkout.css",
+    "isEntry": true
+  },
+  "resources/admin/css/product.css": {
+    "file": "assets/product.09323e57.css",
+    "src": "resources/admin/css/product.css",
+    "isEntry": true
+  },
+  "resources/admin/css/form-edit.css": {
+    "file": "assets/form-edit.6ce01dab.css",
+    "src": "resources/admin/css/form-edit.css",
+    "isEntry": true
+  },
+  "resources/client/css/product-detail.css": {
+    "file": "assets/product-detail.165a70a3.css",
+    "src": "resources/client/css/product-detail.css",
+    "isEntry": true
+  },
+  "resources/client/css/product-review.css": {
+    "file": "assets/product-review.5477d64c.css",
+    "src": "resources/client/css/product-review.css",
+    "isEntry": true
+  },
+  "resources/client/css/cart.css": {
+    "file": "assets/cart.e8b1a07c.css",
+    "src": "resources/client/css/cart.css",
+    "isEntry": true
+  },
+  "resources/client/css/home.css": {
+    "file": "assets/home.d2e40864.css",
+    "src": "resources/client/css/home.css",
+    "isEntry": true
+  }
+}

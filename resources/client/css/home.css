@@ -1,0 +1,264 @@
+.flat-caption p{
+    font-size: 18px !important;
+}
+
+.start-container .fa-star, .start-container .fa-star-half-alt{
+    color: #F5A623 !important;
+}
+.start-container .none {
+    color: #b1b1b1 !important;
+}
+.button_group {
+    padding-bottom:  10px;
+}
+/* Sidebar */
+.sidebar {
+    text-align: left;
+    width: 200px; /* Chiều rộng ban đầu của sidebar */
+    background: #4f5962;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: auto; /* Chiều cao full màn hình */
+    transition: width 0.3s ease; /* Hiệu ứng mở rộng khi hover */
+}
+
+/* Danh sách menu */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Mục menu chính */
+.menu-item {
+    position: relative;
+}
+
+/* Liên kết menu */
+.menu-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Đảm bảo các mục menu chiếm hết chiều rộng */
+}
+
+/* Icon trong menu */
+.menu-link i {
+    font-size: 24px;
+    transition: transform 0.3s ease; /* Thêm hiệu ứng xoay icon */
+}
+
+/* Text menu bị ẩn ban đầu */
+.menu-text {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Submenu (dropdown) */
+.submenu {
+    display: none; /* Ẩn submenu mặc định */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    background-color: white; /* Màu nền của submenu */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 300px; /* Chiều rộng tự động theo nội dung */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    border-radius: 4px;
+    z-index: 1000000000;
+}
+
+/* Các mục trong submenu */
+.submenu li {
+    padding: 5px 10px;
+}
+
+/* Thêm hiệu ứng hover cho submenu */
+.submenu li a {
+    font-size: 14px;
+    color: #222;
+    text-decoration: none;
+    display: flex; /* Đảm bảo rằng cả icon và text đều nằm trong cùng một dòng */
+    align-items: center; /* Căn giữa icon và text */
+    padding: 5px 10px;
+    text-decoration: none; /* Loại bỏ gạch chân */
+    font-weight: bold; /* Chữ in đậm */
+    text-transform: uppercase; /* Viết hoa toàn bộ */
+}
+
+/* Hiệu ứng hover cho submenu */
+.submenu li a:hover {
+    background-color: #4f5962; /* Màu nền khi hover */
+    color: white; /* Thay đổi màu chữ khi hover */
+}
+
+/* Hiển thị submenu khi có class active */
+.submenu.active {
+    display: block;
+}
+
+/* Mũi tên trỏ lên icon */
+.menu-item > .menu-link::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #444; /* Màu của mũi tên */
+    display: none; /* Mặc định ẩn mũi tên */
+}
+
+/* Khi menu được mở, icon sẽ thay thành dấu 'X' */
+.menu-item.open .menu-link i {
+    transform: rotate(180deg); /* Xoay icon thành dấu X */
+}
+
+/* Hiển thị mũi tên khi submenu có class active */
+.menu-item.open > .menu-link::after {
+    display: block; /* Hiển thị mũi tên khi submenu được mở */
+}
+
+/* Hiển thị text khi menu mở */
+.menu-item.open .menu-text {
+    display: block; /* Hiển thị text khi menu mở */
+}
+
+input[type="text"].search-keyword {
+    padding: 9px 50px 10px 9px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ececec;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    display: inline-block;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-transition: all 150ms linear;
+    transition: all 150ms linear;
+}
+
+
+/* Form tìm kiếm */
+.search-form {
+    display: flex;
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+    width: 100%; /* Đảm bảo chiều rộng chiếm hết không gian của phần tử cha */
+}
+
+/* Ô input tìm kiếm */
+.search-keyword {
+    flex: 1; /* Chiếm hết không gian còn lại trong form */
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 30px 0 0 30px; /* Bo tròn góc trái */
+    outline: none;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Nút submit (Tìm kiếm) */
+.search-submit {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    border-radius: 0 30px 30px 0; /* Bo tròn góc phải */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Khi hover vào nút submit */
+.search-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Hiệu ứng hover cho input */
+.search-keyword:hover {
+    border-color: #007bff;
+}
+
+/* Khi input focus */
+.search-keyword:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Hiệu ứng sáng khi focus */
+}
+
+.svg-ico-cart {
+    width: 25px;
+    fill: #fff;
+}
+.svg-ico-account {
+    width: 20px;
+    fill: #fff;
+}
+/* Định dạng cho icon tài khoản */
+.account-icon {
+    cursor: pointer;
+}
+
+/* Định dạng cho dropdown khi ẩn */
+.account-dropdown {
+    display: none; /* Ẩn submenu mặc định */
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+    text-align: left;
+    background-color: white; /* Màu nền của submenu */
+    position: absolute;
+    top: 150%;
+    left: 0;
+    width: 200px; /* Chiều rộng tự động theo nội dung */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    border-radius: 4px;
+    z-index: 1000000000;
+}
+
+/* Định dạng cho các liên kết trong dropdown */
+.account-dropdown a {
+    font-size: 14px;
+    color: #222;
+    text-decoration: none;
+    display: flex; /* Đảm bảo rằng cả icon và text đều nằm trong cùng một dòng */
+    align-items: center; /* Căn giữa icon và text */
+    padding: 5px 10px;
+    text-decoration: none; /* Loại bỏ gạch chân */
+    font-weight: bold; /* Chữ in đậm */
+    text-transform: uppercase; /* Viết hoa toàn bộ */
+}
+
+/* Hiệu ứng khi hover vào các liên kết */
+.account-dropdown a:hover {
+    background-color: #4f5962; /* Màu nền khi hover */
+    color: white; /* Thay đổi màu chữ khi hover */
+}
+
+/* Định dạng cho dropdown khi hiển thị */
+.account-dropdown.active {
+    display: block;
+}

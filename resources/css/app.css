@@ -1,0 +1,36 @@
+    /* Màu nền tối nhẹ cho sidebar */
+    .main-sidebar {
+        background-color: #343a40; /* Xám đậm thay vì đen hoàn toàn */
+    }
+
+    /* Tạo hiệu ứng hover cho các item trong sidebar */
+    .main-sidebar .nav-link:hover {
+        background-color: #007bff; /* Xanh dương khi hover */
+        color: #ffffff; /* Đổi màu văn bản khi hover */
+    }
+
+    /* Màu văn bản sáng cho sidebar */
+    .main-sidebar .nav-link {
+        color: #ffffff; /* Màu trắng cho văn bản */
+    }
+
+    /* Màu icon sáng */
+    .main-sidebar .nav-icon {
+        color: #ffffff; /* Icon trắng */
+    }
+
+    /* Đổi màu khi nhấn vào item */
+    .main-sidebar .nav-link.active {
+        background-color: #28a745; /* Xanh lá cây khi chọn mục */
+        color: #ffffff; /* Văn bản trắng khi chọn */
+    }
+        .btn-primary {
+        background-color: #007bff !important;
+        border-color: #007bff !important;
+        }
+
+        /* Ghi đè màu khi hover lên nút */
+        .btn-primary:hover {
+        background-color: #0069d9 !important; /* Màu khi hover */
+        border-color: #0062cc !important;     /* Viền khi hover */
+        }
