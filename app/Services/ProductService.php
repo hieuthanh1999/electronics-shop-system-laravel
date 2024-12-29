@@ -72,6 +72,24 @@ class ProductService
     public function index()
     {
         $list = $this->productRepository->all();
+        $list = $list->map(function ($product) {
+            $totalQuantity = 0;
+
+            // Duyệt qua các màu sắc của sản phẩm
+            foreach ($product->productColors as $productColor) {
+                // Duyệt qua các kích cỡ của mỗi màu sắc và cộng tổng quantity
+                foreach ($productColor->productSizes as $productSize) {
+                    $totalQuantity += $productSize->quantity;
+                }
+            }
+
+            // Thêm tổng quantity vào mỗi sản phẩm
+            $product->total_quantity = $totalQuantity;
+
+
+            return $product;
+        });
+
 
         $tableCrud = [
             'headers' => [
@@ -99,6 +117,10 @@ class ProductService
                     'text' => 'Giá',
                     'key' => 'price_sell',
                     'format' => true,
+                ],
+                [
+                    'text' => 'Số Lượng',
+                    'key' => 'total_quantity',
                 ],
             ],
             'actions' => [

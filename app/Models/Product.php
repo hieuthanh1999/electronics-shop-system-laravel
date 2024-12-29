@@ -50,4 +50,9 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'category_id', 'id')->setEagerLoads([]);
 
     }
+
+    public function productColors()
+    {
+        return $this->hasMany(ProductColor::class);
+    }
 }

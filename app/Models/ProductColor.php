@@ -34,4 +34,9 @@ class ProductColor extends Model
     {
         return $this->belongsTo(Color::class, 'color_id', 'id')->setEagerLoads([]);
     }
+
+    public function productSizes()
+    {
+        return $this->hasMany(ProductSize::class);
+    }
 }
