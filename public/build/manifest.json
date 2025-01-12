@@ -1,6 +1,6 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.7394ab43.js",
+    "file": "assets/app.8a6f53d8.js",
     "src": "resources/js/app.js",
     "isEntry": true
   },
@@ -15,11 +15,11 @@
     "isEntry": true
   },
   "resources/admin/js/table-data.js": {
-    "file": "assets/table-data.83be78ae.js",
+    "file": "assets/table-data.6db97a1a.js",
     "src": "resources/admin/js/table-data.js",
     "isEntry": true,
     "imports": [
-      "_sweetalert2.esm.all.a0d56efc.js"
+      "_sweetalert2.esm.all.b42e944b.js"
     ]
   },
   "resources/common/js/login.js": {
@@ -38,11 +38,11 @@
     "isEntry": true
   },
   "resources/admin/js/toast-message.js": {
-    "file": "assets/toast-message.34039841.js",
+    "file": "assets/toast-message.b02dad47.js",
     "src": "resources/admin/js/toast-message.js",
     "isEntry": true,
     "imports": [
-      "_sweetalert2.esm.all.a0d56efc.js"
+      "_sweetalert2.esm.all.b42e944b.js"
     ]
   },
   "resources/admin/js/product.js": {
@@ -71,19 +71,19 @@
     "isEntry": true
   },
   "resources/admin/js/product-color.js": {
-    "file": "assets/product-color.15d99ac2.js",
+    "file": "assets/product-color.367c92e0.js",
     "src": "resources/admin/js/product-color.js",
     "isEntry": true,
     "imports": [
-      "_sweetalert2.esm.all.a0d56efc.js"
+      "_sweetalert2.esm.all.b42e944b.js"
     ]
   },
   "resources/admin/js/size.js": {
-    "file": "assets/size.6e35fd03.js",
+    "file": "assets/size.1c27b786.js",
     "src": "resources/admin/js/size.js",
     "isEntry": true,
     "imports": [
-      "_sweetalert2.esm.all.a0d56efc.js"
+      "_sweetalert2.esm.all.b42e944b.js"
     ]
   },
   "resources/admin/js/edit-product.js": {
@@ -101,32 +101,17 @@
     "src": "resources/client/js/profile.js",
     "isEntry": true
   },
-  "_sweetalert2.esm.all.a0d56efc.js": {
-    "file": "assets/sweetalert2.esm.all.a0d56efc.js"
-  },
-  "resources/common/css/loading.css": {
-    "file": "assets/loading.e964a3b8.css",
-    "src": "resources/common/css/loading.css",
-    "isEntry": true
-  },
-  "resources/client/css/search.css": {
-    "file": "assets/search.5cc590b5.css",
-    "src": "resources/client/css/search.css",
-    "isEntry": true
+  "_sweetalert2.esm.all.b42e944b.js": {
+    "file": "assets/sweetalert2.esm.all.b42e944b.js"
   },
   "resources/css/app.css": {
     "file": "assets/app.8b80c0f9.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/common/css/form.css": {
-    "file": "assets/form.71cf2f43.css",
-    "src": "resources/common/css/form.css",
-    "isEntry": true
-  },
-  "resources/client/css/auth.css": {
-    "file": "assets/auth.2c7ae315.css",
-    "src": "resources/client/css/auth.css",
+  "resources/common/css/loading.css": {
+    "file": "assets/loading.e964a3b8.css",
+    "src": "resources/common/css/loading.css",
     "isEntry": true
   },
   "resources/client/css/checkout.css": {
@@ -134,9 +119,9 @@
     "src": "resources/client/css/checkout.css",
     "isEntry": true
   },
-  "resources/admin/css/product.css": {
-    "file": "assets/product.09323e57.css",
-    "src": "resources/admin/css/product.css",
+  "resources/common/css/form.css": {
+    "file": "assets/form.71cf2f43.css",
+    "src": "resources/common/css/form.css",
     "isEntry": true
   },
   "resources/admin/css/form-edit.css": {
@@ -144,19 +129,34 @@
     "src": "resources/admin/css/form-edit.css",
     "isEntry": true
   },
+  "resources/client/css/search.css": {
+    "file": "assets/search.5cc590b5.css",
+    "src": "resources/client/css/search.css",
+    "isEntry": true
+  },
+  "resources/admin/css/product.css": {
+    "file": "assets/product.09323e57.css",
+    "src": "resources/admin/css/product.css",
+    "isEntry": true
+  },
   "resources/client/css/product-detail.css": {
     "file": "assets/product-detail.165a70a3.css",
     "src": "resources/client/css/product-detail.css",
     "isEntry": true
   },
-  "resources/client/css/product-review.css": {
-    "file": "assets/product-review.5477d64c.css",
-    "src": "resources/client/css/product-review.css",
+  "resources/client/css/auth.css": {
+    "file": "assets/auth.2c7ae315.css",
+    "src": "resources/client/css/auth.css",
     "isEntry": true
   },
   "resources/client/css/cart.css": {
     "file": "assets/cart.e8b1a07c.css",
     "src": "resources/client/css/cart.css",
+    "isEntry": true
+  },
+  "resources/client/css/product-review.css": {
+    "file": "assets/product-review.5477d64c.css",
+    "src": "resources/client/css/product-review.css",
     "isEntry": true
   },
   "resources/client/css/home.css": {

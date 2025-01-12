@@ -123,7 +123,7 @@ document.addEventListener("click", function (e) {
                     </div>
                     <div class="logo">
                         <a href="{{ route('user.home') }}">
-                           <img src="{{ asset("asset/client/images/" . setting_website()->logo) }}" alt="Electronics Shop System">
+                           <img src="{{ asset("asset/client/images/" . setting_website()->logo) }}" alt="Cửa hàng Linh kiện điện tử giá tốt">
                         </a>
                      </div>
                   </div>

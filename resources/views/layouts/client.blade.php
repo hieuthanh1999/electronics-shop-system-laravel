@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="header-navbar">
                     <div class="header-brand">
                         <a href="{{ route('user.home') }}" class="logo logo-dark">
-                            <img src="{{ asset("asset/client/images/" . setting_website()->logo) }}" style="width: 40px; height: 50px;" alt="Electronics Shop System">
+                            <img src="{{ asset("asset/client/images/" . setting_website()->logo) }}" style="width: 40px; height: 50px;" alt="Cửa hàng Linh kiện điện tử giá tốt">
                          </a>
                     </div>
                     <div class="header-main-nav">
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <button class="mobile-close-btn mobile-nav-toggler"><i class="fas fa-times"></i></button>
                             {{-- <div class="mobile-nav-brand">
                                 <a href="{{ route('user.home') }}">
-                                    <img src="{{ asset("asset/client/images/" . setting_website()->logo) }}" alt="Electronics Shop System">
+                                    <img src="{{ asset("asset/client/images/" . setting_website()->logo) }}" alt="Cửa hàng Linh kiện điện tử giá tốt">
                                  </a>
                                 <a href="index.html" class="logo">
 

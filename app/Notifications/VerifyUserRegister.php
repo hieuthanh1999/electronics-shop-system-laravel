@@ -43,9 +43,9 @@ class VerifyUserRegister extends Notification
             . $notifiable->getKey()
             . '?token=' . $this->token;
         return (new MailMessage)
-                    ->subject('[Electronics Shop System] XÁC NHẬN TÀI KHOẢN')
+                    ->subject('[Cửa hàng Linh kiện điện tử giá tốt] XÁC NHẬN TÀI KHOẢN')
                     ->line('--------------------------------')
-                    ->line('Xin chào ' . $notifiable->name . ', chào mừng bạn đã đến với Store Electronics Shop System')
+                    ->line('Xin chào ' . $notifiable->name . ', chào mừng bạn đã đến với Store Cửa hàng Linh kiện điện tử giá tốt')
                     ->line('--------------------------------')
                     ->line('Để xác nhận tài khoản vui lòng bấm vào nút xác nhận dưới đây')
                     ->action('Xác Nhận', $verifyUrl);

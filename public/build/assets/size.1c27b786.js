@@ -1,4 +1,4 @@
-import{S as l}from"./sweetalert2.esm.all.a0d56efc.js";$(document).ready(function(){n=n(),a(),$(document).on("change","#color_id",function(){$("#loading__js").css("display","flex"),a()}),c("submit",".form-submit"),$(document).on("click",".edit",function(){$("#loading__js").css("display","flex");let t=$(this).attr("url-update"),o=$(this).attr("url-get-size"),e=`
+import{S as l}from"./sweetalert2.esm.all.b42e944b.js";$(document).ready(function(){n=n(),a(),$(document).on("change","#color_id",function(){$("#loading__js").css("display","flex"),a()}),c("submit",".form-submit"),$(document).on("click",".edit",function(){$("#loading__js").css("display","flex");let t=$(this).attr("url-update"),o=$(this).attr("url-get-size"),e=`
         <form method="post"
           class="fo rm-submit"
           enctype="multipart/form-data"
